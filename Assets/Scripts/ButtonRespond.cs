@@ -14,6 +14,6 @@ public class ButtonRespond : MonoBehaviour
     }
     public void LoadScene()
     {
-        SceneManager.LoadScene(scenename);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(scenename);
     }
 }

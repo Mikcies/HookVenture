@@ -5,8 +5,10 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     GameObject target;
-    public float BulletSpeed;
+    [SerializeField]
+    float BulletSpeed;
     Rigidbody2D bulletRB;
+    
     void Start()
     {
         bulletRB = GetComponent<Rigidbody2D>();

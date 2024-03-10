@@ -29,24 +29,25 @@ public abstract class Enemy : MonoBehaviour
         return _isAlive;
     }
     
-    protected void HandleDeath()
+    protected virtual void HandleDeath()
     {
-        rb.isKinematic = true;
+        Collider2D collider = GetComponent<Collider2D>();
 
+        if( collider != null)
+        {
+            collider.enabled = false;
+        }
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
         if (spriteRenderer != null)
         {
             spriteRenderer.color = Color.gray;
             spriteRenderer.sortingOrder = -1;
         }
-        else
-        {
-            Debug.LogError("SpriteRenderer component is null in HandleDeath");
-        }
+
     }
     protected abstract void Move();
 
-    public void TakeDamage()
+    internal void TakeDamage()
     {
         CurrHp--;
         IsAlive();

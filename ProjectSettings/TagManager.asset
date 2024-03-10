@@ -7,6 +7,13 @@ TagManager:
   - Enemy
   - Bullet
   - PlayerAttack
+  - Spikes
+  - Entrance
+  - Boss
+  - Claw
+  - Cloak
+  - Dash
+  - Ghost
   layers:
   - Default
   - TransparentFX
@@ -15,10 +22,10 @@ TagManager:
   - Water
   - UI
   - Enemy
-  - 
-  - 
-  - 
-  - 
+  - Bullet
+  - Spikes
+  - Boss
+  - Ghost
   - 
   - 
   - 

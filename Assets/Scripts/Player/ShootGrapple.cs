@@ -5,67 +5,93 @@ using UnityEngine;
 
 public class ShootGrapple : MonoBehaviour
 {
-    public Camera mainCamera;
-    public LineRenderer _lineRenderer;
-    public DistanceJoint2D _Distancejoint;
-    public Rigidbody2D rb;
-    public float force;
-    private Vector3 MouseDir;
-    public Transform LinePosition;
-    public bool isGrappling;
-    public Transform lookToHook;
+    [SerializeField]
+    Camera mainCamera;
+    [SerializeField]
+    LineRenderer lineRenderer;
+    [SerializeField]
+    DistanceJoint2D Distancejoint;
+    Rigidbody2D rb;
+    [SerializeField]
+    float force;
+    [SerializeField]
+    Transform LinePosition;
+    [SerializeField]
+    bool isGrappling;
+    [SerializeField]
+    LayerMask floorLayerMask;
+    [SerializeField]
+    private Transform Ray;
 
+    [SerializeField]
+    internal bool Claw = false;
+    int GrappleCount = 2;
+    int numberofgrapple = 0;
+    private bool isGrounded = false;
 
-    // Start is called before the first frame update
     void Start()
     {
-        isGrappling = true;
-        _Distancejoint.autoConfigureDistance = true;
-        _Distancejoint.enabled = false;
-        _lineRenderer.enabled = false;
+        Distancejoint.autoConfigureDistance = true;
+        Distancejoint.enabled = false;
+        lineRenderer.enabled = false;
+        rb = GetComponent<Rigidbody2D>();
     }
-    // Update is called once per frame
     void Update()
     {
-        MouseDir = mainCamera.ScreenToWorldPoint(Input.mousePosition);
-        if (isGrappling == true)
+
+        if(numberofgrapple < GrappleCount)
         {
+            Grapple();
+        }
+        if (!Claw)
+        {
+            GrappleCount = 2;
+        }
+        else
+        {
+            GrappleCount = 3;
+        }
+        isGrounded = (Physics2D.Raycast(Ray.position, Vector2.down, 0.5f, floorLayerMask).collider != null);
+        if (isGrounded)
+        {
+            numberofgrapple = 0;
+        }
+    }
+    private void Grapple()
+    {
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 Vector2 mousepos = (Vector2)mainCamera.ScreenToWorldPoint(Input.mousePosition);
-                _lineRenderer.SetPosition(0, mousepos);
-                _lineRenderer.SetPosition(1, transform.position);
-                _Distancejoint.connectedAnchor = mousepos;
-                _Distancejoint.enabled = true;
-
+                lineRenderer.SetPosition(0, mousepos);
+                lineRenderer.SetPosition(1, transform.position);
+                Distancejoint.connectedAnchor = mousepos;
+                Distancejoint.enabled = true;
                 LinePosition.position = mousepos;
+
             }
             if (Input.GetKey(KeyCode.Mouse0))
             {
-                _lineRenderer.SetPosition(1, transform.position);
-                _lineRenderer.enabled = true;
+                lineRenderer.SetPosition(1, transform.position);
+                lineRenderer.enabled = true;
             }
             else if (Input.GetKeyUp(KeyCode.Mouse0))
             {
-                _Distancejoint.enabled = false;
-                _lineRenderer.enabled = false;
-            }
-            if (_Distancejoint.enabled)
-            {
-                _lineRenderer.SetPosition(1, transform.position);
-            }
-            if (Input.GetKey(KeyCode.E) && Input.GetKey(KeyCode.Mouse0))
-            {
-                Vector3 Direction = LinePosition.position - transform.position;
-                rb.velocity = new Vector2(Direction.x * force, Direction.y * force).normalized * force * Time.deltaTime;
-                _Distancejoint.enabled = false;
-            }
+                Distancejoint.enabled = false;
+                lineRenderer.enabled = false;
+                numberofgrapple++;
 
-            if (Input.GetKeyUp(KeyCode.E) && Input.GetKey(KeyCode.Mouse0))
-            {
-                _Distancejoint.enabled = true;
             }
+        if (Input.GetKey(KeyCode.Mouse0))
+        {
+                Vector2 Direction = LinePosition.position - transform.position;
+                rb.velocity = new Vector2(Direction.x * force, Direction.y * force).normalized * force * Time.deltaTime;
+                Distancejoint.enabled = false;
         }
 
+        if (Input.GetKey(KeyCode.Mouse0))
+        {
+                Distancejoint.enabled = true;
+        }
+        
     }
 }

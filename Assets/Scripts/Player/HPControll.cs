@@ -13,14 +13,23 @@ public class HPControll : MonoBehaviour
     [SerializeField]
     private int CurrHP;
 
-    public Image[] Hearts;
-    public Sprite UnhittedHealth;
-    public Sprite HittedHealth;
+    [SerializeField]
+    Image[] Hearts;
+    [SerializeField]
+    Sprite UnhittedHealth;
+    [SerializeField]
+    Sprite HittedHealth;
 
 
     private bool isHitCooldown = false;
     private float hitCooldownTimer = 0f;
     public float maxHitCooldownTime = 1.0f;
+
+    private Vector2 playerDeathPosition;
+    [SerializeField]
+    GameObject prefab;
+    [SerializeField]
+    Transform setPlayerDeath;
     void Start()
     {
         CurrHP = MaxHP;
@@ -32,7 +41,7 @@ public class HPControll : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Spikes") || collision.gameObject.CompareTag("Boss"))
         {
             IsHit();
         }
@@ -54,8 +63,10 @@ public class HPControll : MonoBehaviour
         }
         else if (CurrHP <= 0)
         {
-            //SceneManager.LoadScene("EndScreen");
-            Debug.Log("Dead");
+            playerDeathPosition = transform.position;
+            Instantiate(prefab, playerDeathPosition, Quaternion.identity);
+            CurrHP = 1;
+            transform.position = setPlayerDeath.position;
         }
     }
     private void GenerateHealthBar()
@@ -90,7 +101,7 @@ public class HPControll : MonoBehaviour
             if (hitCooldownTimer <= 0f)
             {
                 isHitCooldown = false;
-                GetComponent<SpriteRenderer>().color = Color.white; // Reset the player's color to default
+                GetComponent<SpriteRenderer>().color = Color.white;
             }
         }
     }
