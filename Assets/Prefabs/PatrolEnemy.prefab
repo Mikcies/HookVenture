@@ -187,6 +187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHp: 5
   MoveSpeed: 3
+  CoinPrefab: {fileID: 5473430424882484297, guid: 53eeb9a5915df634ca297d4eee6b7bae, type: 3}
   pointA: {fileID: 1520252318847816403}
   pointB: {fileID: 1520252317314369085}
 --- !u!60 &8546243076984764442

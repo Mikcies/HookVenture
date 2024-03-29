@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class Collect : MonoBehaviour
 {
+    [SerializeField]
+    internal int CoinAmount;
+
+    public int GetCoinAmount()
+    {
+        return CoinAmount;
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Cloak")
@@ -23,9 +30,23 @@ public class Collect : MonoBehaviour
         {
             PlayerMovement playerMovement = GetComponent<PlayerMovement>();
             playerMovement.Dash = true;
+            Destroy(collision.gameObject);
+        }
+        if(collision.gameObject.tag == "Coin")
+        {
+            int Amount = Random.Range(1, 11);
+            CoinAmount += Amount;
+            Destroy(collision.gameObject);
 
-            
+        }
+        if (collision.gameObject.tag == "HearthPiece")
+        {
+            HPControll hp = GetComponent<HPControll>();
+            hp.Hearthpieces++;
             Destroy(collision.gameObject);
         }
     }
+    
+    
+
 }

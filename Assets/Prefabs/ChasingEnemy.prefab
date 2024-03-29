@@ -210,6 +210,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHp: 1
   MoveSpeed: 3.5
+  CoinPrefab: {fileID: 5473430424882484297, guid: 53eeb9a5915df634ca297d4eee6b7bae, type: 3}
   Site: 2.5
 --- !u!1 &6235485346968990035
 GameObject:

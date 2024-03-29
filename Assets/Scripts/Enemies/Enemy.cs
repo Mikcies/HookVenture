@@ -9,6 +9,9 @@ public abstract class Enemy : MonoBehaviour
     protected int CurrHp;
     [SerializeField] protected float MoveSpeed;
     protected Rigidbody2D rb;
+    [SerializeField]
+    GameObject CoinPrefab;
+    private bool coinsDropped = false;
 
     protected virtual void Start()
     {
@@ -43,6 +46,11 @@ public abstract class Enemy : MonoBehaviour
             spriteRenderer.color = Color.gray;
             spriteRenderer.sortingOrder = -1;
         }
+        if (!coinsDropped)
+        {
+            DropCoins();
+            coinsDropped = true;
+        }
 
     }
     protected abstract void Move();
@@ -52,4 +60,18 @@ public abstract class Enemy : MonoBehaviour
         CurrHp--;
         IsAlive();
     }
+    void DropCoins()
+    {
+        int numberOfCoins = Random.Range(1, 5);
+
+        for (int i = 0; i < numberOfCoins; i++)
+        {
+            float randomOffsetX = Random.Range(-4f, 4f);
+
+            Vector3 spawnPosition = transform.position + new Vector3(randomOffsetX, 0f, 0f);
+
+            Instantiate(CoinPrefab, spawnPosition, Quaternion.identity);
+        }
+    }
+
 }

@@ -186,7 +186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHp: 2
   MoveSpeed: 3
-  Site: 7
+  CoinPrefab: {fileID: 5473430424882484297, guid: 53eeb9a5915df634ca297d4eee6b7bae, type: 3}
   ShootingRange: 12.89
   bullet: {fileID: 7989335304961952586, guid: baf91596d9c2dd14f893cc4aa9984de6, type: 3}
   bulletStart: {fileID: 4849282687370636461}

@@ -13,6 +13,8 @@ public class HPControll : MonoBehaviour
     [SerializeField]
     private int CurrHP;
 
+    internal int Hearthpieces = 0;
+
     [SerializeField]
     Image[] Hearts;
     [SerializeField]
@@ -23,7 +25,8 @@ public class HPControll : MonoBehaviour
 
     private bool isHitCooldown = false;
     private float hitCooldownTimer = 0f;
-    public float maxHitCooldownTime = 1.0f;
+    [SerializeField]
+    float maxHitCooldownTime = 1.0f;
 
     private Vector2 playerDeathPosition;
     [SerializeField]
@@ -38,6 +41,7 @@ public class HPControll : MonoBehaviour
     {
         GenerateHealthBar();
         IFrames();
+        IncreaseMaxHealth();
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -103,6 +107,14 @@ public class HPControll : MonoBehaviour
                 isHitCooldown = false;
                 GetComponent<SpriteRenderer>().color = Color.white;
             }
+        }
+    }
+
+    private void IncreaseMaxHealth()
+    {
+        if(Hearthpieces == 3)
+        {
+            MaxHP++;
         }
     }
 }
