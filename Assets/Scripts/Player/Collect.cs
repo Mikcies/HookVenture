@@ -5,12 +5,9 @@ using UnityEngine;
 public class Collect : MonoBehaviour
 {
     [SerializeField]
-    internal int CoinAmount;
+    internal int CoinAmount = 25;
 
-    public int GetCoinAmount()
-    {
-        return CoinAmount;
-    }
+   
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Cloak")

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shop : MonoBehaviour
+public class Shop4 : MonoBehaviour
 {
     protected int spawnCount = 0;
     protected bool StandingIn = false;
@@ -17,11 +17,6 @@ public class Shop : MonoBehaviour
 
     PlayerMovement move = new PlayerMovement();
     public Collect collect;
-
-    protected void Start()
-    {
-    }
-
     protected void Update()
     {
         if (Input.GetKey(KeyCode.E))
@@ -48,7 +43,7 @@ public class Shop : MonoBehaviour
 
     protected virtual void CanShop()
     {
-        if (StandingIn && !move.SecondJump && collect.CoinAmount >= ItemValue)
+        if (StandingIn && collect.CoinAmount >= ItemValue)
         {
             collect.CoinAmount -= ItemValue;
             if (spawnCount < 1)
