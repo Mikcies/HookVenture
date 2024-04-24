@@ -43,9 +43,9 @@ public class Shop4 : MonoBehaviour
 
     protected virtual void CanShop()
     {
-        if (StandingIn && collect.CoinAmount >= ItemValue)
+        if (StandingIn && Collect.CoinAmount >= ItemValue)
         {
-            collect.CoinAmount -= ItemValue;
+            Collect.CoinAmount -= ItemValue;
             if (spawnCount < 1)
             {
                 Instantiate(ItemPrefab, ItemLocation.position, Quaternion.identity);

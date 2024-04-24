@@ -11,7 +11,7 @@ public class HPControll : MonoBehaviour
     [SerializeField]
     private int MaxHP;
     [SerializeField]
-    private int CurrHP;
+    internal static int CurrHP;
 
     internal int Hearthpieces = 0;
 
@@ -35,6 +35,7 @@ public class HPControll : MonoBehaviour
     Transform setPlayerDeath;
     void Start()
     {
+        MaxHP = 5;
         CurrHP = MaxHP;
     }
     void Update()

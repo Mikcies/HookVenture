@@ -16,7 +16,6 @@ public class Shop : MonoBehaviour
     protected int ItemValue;
 
     PlayerMovement move = new PlayerMovement();
-    public Collect collect;
     protected virtual void Update()
     {
         if (Input.GetKey(KeyCode.E))
@@ -43,9 +42,9 @@ public class Shop : MonoBehaviour
 
     protected virtual void CanShop()
     {
-        if (StandingIn && !move.SecondJump && collect.CoinAmount >= ItemValue)
+        if (StandingIn && !PlayerMovement.SecondJump && Collect.CoinAmount >= ItemValue)
         {
-            collect.CoinAmount -= ItemValue;
+            Collect.CoinAmount -= ItemValue;
             if (spawnCount < 1)
             {
                 Instantiate(ItemPrefab, ItemLocation.position, Quaternion.identity);

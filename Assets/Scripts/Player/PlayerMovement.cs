@@ -22,11 +22,11 @@ public class PlayerMovement : MonoBehaviour
 
     private bool isGrounded = false;
     [SerializeField]
-    internal bool SecondJump = false;
+    internal static bool SecondJump = false;
     private bool hasDoubleJumped = false;
 
     [SerializeField]    
-    internal bool Dash = false;
+    internal static bool Dash = false;
     bool canDash = true;
     bool isDashing;
     [SerializeField]

@@ -25,7 +25,7 @@ public class TextEditor : MonoBehaviour
     {
         if (collect != null)
         {
-            text.text = collect.CoinAmount.ToString() + "x";
+            text.text = Collect.CoinAmount.ToString() + "x";
         }
     }
 }

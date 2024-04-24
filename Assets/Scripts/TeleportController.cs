@@ -19,6 +19,7 @@ public class TeleportController : MonoBehaviour
     Transform spawnPosition;
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        PlayerPref.SaveData();
         if (collision.gameObject.CompareTag("Player"))
         {
             SceneManager.SetDestinaionDirection(destination);
@@ -28,7 +29,8 @@ public class TeleportController : MonoBehaviour
     void Start()
     {
         if(source == SceneManager.DestinationDirection) 
-        { 
+        {
+            PlayerPref.LoadData();
             player.position = spawnPosition.position;
         }
     }
