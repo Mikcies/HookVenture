@@ -11,6 +11,7 @@ public class PlayerPref : MonoBehaviour
         PlayerPrefs.SetInt("Dash", (PlayerMovement.Dash ? 1 : 0));
         PlayerPrefs.SetInt("SecondJump", (PlayerMovement.SecondJump ? 1 : 0));
         PlayerPrefs.SetInt("Claw", (ShootGrapple.Claw ? 1 : 0));
+        PlayerPrefs.SetInt("CoinInBonfire", bonfire.BonfireCoin);
         PlayerPrefs.Save();
     }
     internal static void LoadData()
@@ -20,5 +21,6 @@ public class PlayerPref : MonoBehaviour
         PlayerMovement.Dash = (PlayerPrefs.GetInt("Dash") != 0);
         PlayerMovement.SecondJump = (PlayerPrefs.GetInt("SecondJump") != 0);
         ShootGrapple.Claw = (PlayerPrefs.GetInt("Claw") != 0);
+        bonfire.BonfireCoin = (PlayerPrefs.GetInt("CoinInBonfire"));
     }
 }

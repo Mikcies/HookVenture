@@ -26,9 +26,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/Locations/Cells/CellsPart2.unity
     guid: 95623de23c80e9743b81a0a38059039d
-  - enabled: 1
-    path: Assets/Scenes/Levels/Boss Rooms/CellBossRoom.unity
-    guid: 71be8e06357cc8645802ed7ef7ead30c
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/BossTrials.unity
     guid: 7e279942d87a6dd49b6d91e41225500b

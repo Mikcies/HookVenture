@@ -6,9 +6,9 @@ using UnityEngine.SceneManagement;
 public class TeleportController : MonoBehaviour
 {
     [SerializeField]
-    SceneManager.directions source;
+    SceneManagers.directions source;
     [SerializeField]
-    SceneManager.directions destination;
+    SceneManagers.directions destination;
     [SerializeField]
     string DestinationScene;
 
@@ -22,13 +22,13 @@ public class TeleportController : MonoBehaviour
         PlayerPref.SaveData();
         if (collision.gameObject.CompareTag("Player"))
         {
-            SceneManager.SetDestinaionDirection(destination);
+            SceneManagers.SetDestinaionDirection(destination);
             UnityEngine.SceneManagement.SceneManager.LoadScene(DestinationScene.ToString());
         }
     }
     void Start()
     {
-        if(source == SceneManager.DestinationDirection) 
+        if(source == SceneManagers.DestinationDirection) 
         {
             PlayerPref.LoadData();
             player.position = spawnPosition.position;

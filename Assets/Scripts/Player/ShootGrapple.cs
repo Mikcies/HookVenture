@@ -66,7 +66,6 @@ public class ShootGrapple : MonoBehaviour
         if (isTimerRunning)
         {
             float timeGrappled = Time.time - grappleStartTime;
-            Debug.Log(timeGrappled);
 
             if (timeGrappled >= 2 && timeGrappled <= 3)
             {

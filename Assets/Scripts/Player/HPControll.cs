@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -44,6 +43,13 @@ public class HPControll : MonoBehaviour
         IFrames();
         IncreaseMaxHealth();
     }
+    private void OnEnable()
+    {
+    }
+    void sceneLoaded(string scene, LoadSceneMode mode)
+    {
+        scene = bonfire.currentSceneName.ToString();
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Spikes") || collision.gameObject.CompareTag("Boss"))
@@ -63,7 +69,6 @@ public class HPControll : MonoBehaviour
             CurrHP--;
             isHitCooldown = true;
             hitCooldownTimer = maxHitCooldownTime;
-
             GetComponent<SpriteRenderer>().color = Color.red;
         }
         else if (CurrHP <= 0)
@@ -71,7 +76,8 @@ public class HPControll : MonoBehaviour
             playerDeathPosition = transform.position;
             Instantiate(prefab, playerDeathPosition, Quaternion.identity);
             CurrHP = 1;
-            transform.position = setPlayerDeath.position;
+            Collect.CoinAmount = 0;
+            SetPlayerToBonfire();
         }
     }
     private void GenerateHealthBar()
@@ -118,4 +124,26 @@ public class HPControll : MonoBehaviour
             MaxHP++;
         }
     }
+    private void SetPlayerToBonfire()
+    {
+        StartCoroutine(LoadSceneAsyncAndSetPlayerPosition());
+    }
+
+    private IEnumerator LoadSceneAsyncAndSetPlayerPosition()
+    {
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(bonfire.currentSceneName);
+
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
+
+        yield return null;
+
+        transform.position = bonfire.playerPosition;
+    }
+
+
+
+
 }
