@@ -1,44 +1,40 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PatrollingEnemy : Enemy
 {
-    [SerializeField]
-    Transform pointA;
-    [SerializeField]
-    Transform pointB;
-
-    private Transform target;
+    [SerializeField] private Transform BodA;
+    [SerializeField] private Transform BodB;
+    [SerializeField] private float speed = 2.0f;
     private SpriteRenderer spriteRenderer;
+
+    private Vector3 targetPosition;
+    private Vector3 direction;
 
     protected override void Start()
     {
         base.Start();
-        target = pointA;
         spriteRenderer = GetComponent<SpriteRenderer>();
+
+        targetPosition = BodA.position;
     }
 
     void Update()
     {
-        if(IsAlive())
+        if (IsAlive() && CurrHp > 0)
         {
             Move();
         }
     }
-
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            target = (target == pointA) ? pointB : pointA;
-            Debug.Log(target);
-        }
-    }
-
     protected override void Move()
     {
-        Vector2 direction = (target.position - transform.position).normalized;
+        Vector3 previousPosition = transform.position;
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+        direction = transform.position - previousPosition;
+
+        if (Vector3.Distance(transform.position, targetPosition) < 0.1f)
+        {
+            SwitchTarget();
+        }
 
         if (direction.x > 0)
         {
@@ -48,12 +44,25 @@ public class PatrollingEnemy : Enemy
         {
             spriteRenderer.flipX = false;
         }
+    }
 
-        transform.position = Vector2.MoveTowards(transform.position, target.position, MoveSpeed * Time.deltaTime);
-
-        if (Vector2.Distance(transform.position, target.position) < 0.1f)
+    private void SwitchTarget()
+    {
+        if (targetPosition == BodA.position)
         {
-            target = (target == pointA) ? pointB : pointA;
+            targetPosition = BodB.position;
+        }
+        else
+        {
+            targetPosition = BodA.position;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Player"))
+        {
+            SwitchTarget();
         }
     }
 }

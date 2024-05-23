@@ -28,10 +28,7 @@ public class HPControll : MonoBehaviour
     float maxHitCooldownTime = 1.0f;
 
     private Vector2 playerDeathPosition;
-    [SerializeField]
-    GameObject prefab;
-    [SerializeField]
-    Transform setPlayerDeath;
+    
     void Start()
     {
         MaxHP = 5;
@@ -52,7 +49,7 @@ public class HPControll : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Spikes") || collision.gameObject.CompareTag("Boss"))
+        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Spikes") || collision.gameObject.CompareTag("Boss") || collision.gameObject.CompareTag("water"))
         {
             IsHit();
         }
@@ -62,7 +59,7 @@ public class HPControll : MonoBehaviour
             IsHit();  
         }
     }
-    private void IsHit()
+    internal void IsHit()
     {
         if (CurrHP > 0 && !isHitCooldown)
         {
@@ -74,7 +71,6 @@ public class HPControll : MonoBehaviour
         else if (CurrHP <= 0)
         {
             playerDeathPosition = transform.position;
-            Instantiate(prefab, playerDeathPosition, Quaternion.identity);
             CurrHP = 1;
             Collect.CoinAmount = 0;
             SetPlayerToBonfire();

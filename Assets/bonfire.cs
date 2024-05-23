@@ -15,8 +15,7 @@ public class bonfire : MonoBehaviour
     public static Vector3 playerPosition;
 
 
-    [SerializeField]
-    TMP_Text bonfireCoinText;
+   
 
 
     private void Start()
@@ -43,7 +42,6 @@ public class bonfire : MonoBehaviour
     private void Update()
     {
         SaveSceneName();
-        UpdateBonfireCoinText();
     }
 
     void SaveSceneName()
@@ -57,8 +55,5 @@ public class bonfire : MonoBehaviour
         }
     }
 
-    void UpdateBonfireCoinText()
-    {
-        bonfireCoinText.text = "Bonfire Coin: " + BonfireCoin.ToString();
-    }
+   
 }

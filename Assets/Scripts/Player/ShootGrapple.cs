@@ -39,6 +39,7 @@ public class ShootGrapple : MonoBehaviour
         Distancejoint.enabled = false;
         lineRenderer.enabled = false;
         rb = GetComponent<Rigidbody2D>();
+        markObject.enabled = false;
     }
 
     void Update()
@@ -71,18 +72,18 @@ public class ShootGrapple : MonoBehaviour
             {
                 ShowMark(SRankSprite);
             }
-            else if (timeGrappled >= 3 && timeGrappled <= 5)
+            else if (timeGrappled >= 3.1f && timeGrappled <= 4)
             {
                 ShowMark(ARankSprite);
             }
-            else if (timeGrappled >= 6 && timeGrappled <= 8)
+            else if (timeGrappled >= 5 && timeGrappled <= 7)
             {
                 ShowMark(BRankSprite);
             }
-            //if (markObject.activeSelf && Time.time >= markDisplayTime + 2f)
-            //{
-            //    HideMark();
-            //}
+            else if (timeGrappled >= 9)
+            {
+                HideMark();
+            }
         }
     }
 
@@ -130,7 +131,7 @@ public class ShootGrapple : MonoBehaviour
     void ShowMark(Sprite sprite)
     {
         markObject.sprite = sprite;
-        markDisplayTime = Time.time;
+        markObject.enabled = true;
     }
 
     void HideMark()

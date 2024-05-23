@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6084137093431251796}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.1, y: 0, z: 0}
+  m_LocalPosition: {x: -10.8, y: 2.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -200,8 +200,6 @@ MonoBehaviour:
   floorLayerMask:
     serializedVersion: 2
     m_Bits: 8
-  SecondJump: 0
-  Dash: 0
   dashspeed: 30
   dashingTime: 0.2
   tr: {fileID: 6084137093422494072}
@@ -218,7 +216,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHP: 5
-  CurrHP: 5
   Hearts:
   - {fileID: 0}
   - {fileID: 0}
@@ -244,10 +241,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttackPlase: {fileID: 6084137093431251803}
-  AttackRadius: 1.5
+  AttackRadius: 2
   EnemyMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 576
 --- !u!120 &6084137093855973859
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -362,9 +359,9 @@ DistanceJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: -77.2439, y: 34.056885}
   m_AutoConfigureDistance: 1
-  m_Distance: 36.14656
+  m_Distance: 57.87836
   m_MaxDistanceOnly: 1
 --- !u!114 &6084137093855973661
 MonoBehaviour:
@@ -388,7 +385,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   Ray: {fileID: 6084137093691057612}
-  Claw: 0
+  markObject: {fileID: 0}
+  SRankSprite: {fileID: 21300000, guid: f973699f7ea11bf4a94d2b2df9618c5f, type: 3}
+  ARankSprite: {fileID: 21300000, guid: fc4dbadc098464e48848b77d15b71209, type: 3}
+  BRankSprite: {fileID: 21300000, guid: b5b615f3c55966c4c840531bf60825f5, type: 3}
 --- !u!60 &-4615780484069292403
 PolygonCollider2D:
   m_ObjectHideFlags: 0

@@ -25,6 +25,8 @@ public class PlayerMovement : MonoBehaviour
     internal static bool SecondJump = false;
     private bool hasDoubleJumped = false;
 
+
+
     [SerializeField]    
     internal static bool Dash = false;
     bool canDash = true;
@@ -116,6 +118,7 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(dashCD);
         canDash = true;
     }
+    
 }
 
     

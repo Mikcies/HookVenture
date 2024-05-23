@@ -88,6 +88,7 @@ GameObject:
   - component: {fileID: 770550275}
   - component: {fileID: 770550278}
   - component: {fileID: 770550277}
+  - component: {fileID: 893482558}
   m_Layer: 5
   m_Name: CoinAmout
   m_TagString: Untagged
@@ -215,6 +216,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &893482558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770550274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f83462cd9b0fad24584cb638c4693762, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 770550277}
 --- !u!1 &1876893024
 GameObject:
   m_ObjectHideFlags: 0
@@ -251,7 +265,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 809, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1876893027
 CanvasRenderer:
@@ -358,8 +372,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '100
-
+  m_text: '
 
 '
   m_isRightToLeft: 0

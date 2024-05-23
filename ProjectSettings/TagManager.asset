@@ -16,6 +16,7 @@ TagManager:
   - Ghost
   - Coin
   - HearthPiece
+  - water
   layers:
   - Default
   - TransparentFX
