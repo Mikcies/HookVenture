@@ -9,25 +9,25 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
-    path: Assets/Scenes/Levels/Locations/New/Sewers2.unity
+    path: Assets/Scenes/Levels/Locations/Cannals/Sewers2.unity
     guid: feb4222c09d82ef409449c9201001b36
   - enabled: 1
-    path: Assets/Scenes/Levels/Locations/New/Sewers1.unity
+    path: Assets/Scenes/Levels/Locations/Cannals/Sewers1.unity
     guid: ee05a20ad9e3c0b4ca64ca1e40ec3a20
   - enabled: 1
     path: Assets/Scenes/TestRoom.unity
     guid: 10bc36dd689382e4b8d7eedc225addd7
   - enabled: 1
-    path: Assets/Scenes/Levels/Locations/Cannals/CallansPart2.unity
-    guid: 4afc41f2bff4c6f4f9a13703599026be
+    path: Assets/Scenes/Levels/Locations/Cells/Cell1.unity
+    guid: d11237dd8f78c6b48a2045130341e819
   - enabled: 1
-    path: Assets/Scenes/Levels/Locations/Cannals/CannalsPart1.unity
-    guid: fecb03e20f27dd34790cc87ab22e0e88
+    path: Assets/Scenes/Levels/Locations/Cells/Cell2.unity
+    guid: 7c12d0da8f0e54a4caad6534abe12131
   - enabled: 1
     path: Assets/Scenes/Levels/Boss Rooms/CannalBossScene.unity
     guid: eb558d1a5e9f1aa4b92db734b686b38e
   - enabled: 1
-    path: Assets/Scenes/Levels/Boss Rooms/CaveBoss.unity
+    path: Assets/Scenes/Levels/Boss Rooms/CellsBoss.unity
     guid: 13cf871a90edb994cad4d65773a9fdf1
   - enabled: 1
     path: Assets/Scenes/Levels/Locations/Cells/CellsPart2.unity
@@ -41,4 +41,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/Locations/Cave/CavesPart1.unity
     guid: e38c12a2d0e2b9545a6cae2575e25a13
+  - enabled: 1
+    path: Assets/Scenes/Levels/Shops/Shop2.unity
+    guid: e854887b04d43dc4b87e2ec99b7127c4
+  - enabled: 1
+    path: Assets/Scenes/Levels/Shops/Shop3.unity
+    guid: e070b0fef4d889147b58f52c45fa3a96
+  - enabled: 1
+    path: Assets/Scenes/Levels/Shops/Shop1.unity
+    guid: 2221daa88a3181e46bf51a39ef385ade
   m_configObjects: {}

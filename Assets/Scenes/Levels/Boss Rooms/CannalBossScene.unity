@@ -5121,6 +5121,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eaa721a7163cf1c439e1743ae300899a, type: 3}
+--- !u!114 &1214753285 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1876893026, guid: 10a41e4780d98f744aeca8127b4d6e62, type: 3}
+  m_PrefabInstance: {fileID: 972473820}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1227995540 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4880143003383225187, guid: eaa721a7163cf1c439e1743ae300899a, type: 3}
@@ -9071,6 +9082,10 @@ PrefabInstance:
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 487575515}
+    - target: {fileID: 6084137093855973661, guid: 8003c733d7f3942439296ae6caaac93e, type: 3}
+      propertyPath: markObject
+      value: 
+      objectReference: {fileID: 1214753285}
     - target: {fileID: 6084137093855973661, guid: 8003c733d7f3942439296ae6caaac93e, type: 3}
       propertyPath: lineRenderer
       value: 
