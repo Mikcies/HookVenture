@@ -17,21 +17,40 @@ public class TeleportController : MonoBehaviour
 
     [SerializeField]
     Transform spawnPosition;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        PlayerPref.SaveData();
         if (collision.gameObject.CompareTag("Player"))
         {
-            SceneManagers.SetDestinaionDirection(destination);
-            UnityEngine.SceneManagement.SceneManager.LoadScene(DestinationScene.ToString());
+            PlayerPref.SaveData();
+
+            if (DestinationScene == "CannalBossScene" && CannalBoss.CannalBossAlive == false)
+            {
+                SceneManagers.SetDestinaionDirection(destination);
+                SceneManager.LoadScene("CannalBossDeadScene");
+            }
+            else if (DestinationScene == "CaveBoss" && !CaveBoss.CaveBossAlive)
+            {
+                SceneManagers.SetDestinaionDirection(destination);
+                SceneManager.LoadScene("CaveBossDeadScene");
+            }
+            else
+            {
+                SceneManagers.SetDestinaionDirection(destination);
+                SceneManager.LoadScene(DestinationScene);
+            }
         }
     }
+
     void Start()
     {
-        if(source == SceneManagers.DestinationDirection) 
+        if (source == SceneManagers.DestinationDirection)
         {
             PlayerPref.LoadData();
             player.position = spawnPosition.position;
         }
+
+        Debug.Log("Cave boss " + CaveBoss.CaveBossAlive);
+        Debug.Log("Cannal Boss " + CannalBoss.CannalBossAlive);
     }
 }

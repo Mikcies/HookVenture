@@ -35,7 +35,7 @@ public class Lever : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            StandingIn = true;
+            StandingIn = false;
         }
     }
     private void ActivateLever()

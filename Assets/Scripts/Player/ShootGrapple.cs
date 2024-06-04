@@ -68,19 +68,19 @@ public class ShootGrapple : MonoBehaviour
         {
             float timeGrappled = Time.time - grappleStartTime;
 
-            if (timeGrappled >= 2 && timeGrappled <= 3)
+            if (timeGrappled >= 1 && timeGrappled <= 2)
             {
                 ShowMark(SRankSprite);
             }
-            else if (timeGrappled >= 3.1f && timeGrappled <= 4)
+            else if (timeGrappled >= 2.1f && timeGrappled <= 3)
             {
                 ShowMark(ARankSprite);
             }
-            else if (timeGrappled >= 5 && timeGrappled <= 7)
+            else if (timeGrappled >= 3.1 && timeGrappled <= 4)
             {
                 ShowMark(BRankSprite);
             }
-            else if (timeGrappled >= 9)
+            else if (timeGrappled >= 4)
             {
                 HideMark();
             }

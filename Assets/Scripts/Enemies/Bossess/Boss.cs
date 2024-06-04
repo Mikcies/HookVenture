@@ -32,7 +32,7 @@ public abstract class Boss : MonoBehaviour
             HandleDeath();
         return isAlive;
     }
-    protected void HandleDeath()
+    protected virtual void HandleDeath()
     {
         Collider2D collider = GetComponent<Collider2D>();
         if (collider != null)

@@ -12,6 +12,11 @@ public class PlayerPref : MonoBehaviour
         PlayerPrefs.SetInt("SecondJump", (PlayerMovement.SecondJump ? 1 : 0));
         PlayerPrefs.SetInt("Claw", (ShootGrapple.Claw ? 1 : 0));
         PlayerPrefs.SetInt("CoinInBonfire", bonfire.BonfireCoin);
+        PlayerPrefs.SetInt("SewerTreasure", Collect.SewerTreasure);
+        PlayerPrefs.SetInt("CellsTreasure", Collect.CellsTreasure);
+        PlayerPrefs.SetInt("CannalBossAlive", CannalBoss.CannalBossAlive ? 1 : 0);
+        PlayerPrefs.SetInt("CaveBossAlive", CaveBoss.CaveBossAlive ? 1 : 0);
+
         PlayerPrefs.Save();
     }
     internal static void LoadData()
@@ -22,5 +27,10 @@ public class PlayerPref : MonoBehaviour
         PlayerMovement.SecondJump = (PlayerPrefs.GetInt("SecondJump") != 0);
         ShootGrapple.Claw = (PlayerPrefs.GetInt("Claw") != 0);
         bonfire.BonfireCoin = (PlayerPrefs.GetInt("CoinInBonfire"));
+        Collect.SewerTreasure = PlayerPrefs.GetInt("SewerTreasure");
+        Collect.CellsTreasure = PlayerPrefs.GetInt("CellsTreasure");
+        CannalBoss.CannalBossAlive = (PlayerPrefs.GetInt("CannalBossAlive") != 0);
+        CaveBoss.CaveBossAlive = (PlayerPrefs.GetInt("CaaveBossAlive") != 0);
+
     }
 }

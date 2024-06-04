@@ -17,6 +17,8 @@ TagManager:
   - Coin
   - HearthPiece
   - water
+  - SewersTreasure
+  - CellsTreasure
   layers:
   - Default
   - TransparentFX

@@ -10,6 +10,7 @@ public class CannalBoss : Boss
     [SerializeField] private float maxPos;
     private Transform bulletSpawnPoint;
     private float timeSinceLastShot;
+    internal static bool CannalBossAlive = true;
 
     protected new void Start()
     {
@@ -48,5 +49,21 @@ public class CannalBoss : Boss
     {
         Vector2 randomPosition = new Vector2(bulletSpawnPoint.position.x, Random.Range(minPos, maxPos));
         bulletSpawnPoint.position = randomPosition;
+    }
+    protected override void HandleDeath()
+    {
+        Collider2D collider = GetComponent<Collider2D>();
+        SpriteRenderer renderer = GetComponent<SpriteRenderer>();
+        if (collider != null)
+        {
+            collider.enabled = false;
+        }
+
+        if (renderer != null)
+        {
+            renderer.color = Color.gray;
+            renderer.sortingOrder = -1;
+        }
+        CannalBossAlive = false;
     }
 }

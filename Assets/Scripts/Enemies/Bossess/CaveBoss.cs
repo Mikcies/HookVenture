@@ -14,7 +14,10 @@ public class CaveBoss : Boss
     [SerializeField] private float timeSinceLastShot;
     [SerializeField] private float intervalBetweenShots = 5f;
 
-    
+    internal static bool CaveBossAlive = true;
+
+
+
     protected void Update()
     {
         base.Update();
@@ -48,5 +51,21 @@ public class CaveBoss : Boss
             }
         }
         
+    }
+    protected override void HandleDeath()
+    {
+        Collider2D collider = GetComponent<Collider2D>();
+        SpriteRenderer renderer = GetComponent<SpriteRenderer>();
+        if (collider != null)
+        {
+            collider.enabled = false;
+        }
+
+        if (renderer != null)
+        {
+            renderer.color = Color.gray;
+            renderer.sortingOrder = -1;
+        }
+        CaveBossAlive = false;
     }
 }

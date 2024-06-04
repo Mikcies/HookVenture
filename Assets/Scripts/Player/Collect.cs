@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Collect : MonoBehaviour
 {
-    internal static int CoinAmount = 25;
+    internal static int CoinAmount;
+    internal static int SewerTreasure;
+    internal static int CellsTreasure;
 
-   
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Cloak")
@@ -36,6 +37,16 @@ public class Collect : MonoBehaviour
         {
             HPControll hp = GetComponent<HPControll>();
             hp.Hearthpieces++;
+            Destroy(collision.gameObject);
+        }
+        if (collision.gameObject.tag == "SewersTreasure")
+        {
+            SewerTreasure += 1;
+            Destroy(collision.gameObject);
+        }
+        if (collision.gameObject.tag == "CellsTreasure")
+        {
+            CellsTreasure += 1;
             Destroy(collision.gameObject);
         }
     }
