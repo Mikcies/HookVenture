@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
 public class ShootGrapple : MonoBehaviour
 {
     [SerializeField] Camera mainCamera;
@@ -22,7 +21,7 @@ public class ShootGrapple : MonoBehaviour
     int numberofgrapple = 0;
     private bool isGrounded;
 
-    [SerializeField] Image markObject; 
+    [SerializeField] Image markObject;
     [SerializeField]
     Sprite SRankSprite;
     [SerializeField]
@@ -33,6 +32,10 @@ public class ShootGrapple : MonoBehaviour
     bool isTimerRunning;
     float markDisplayTime;
 
+    // New fields for audio
+    [SerializeField] AudioClip hookSound;
+    private AudioSource audioSource;
+
     void Start()
     {
         Distancejoint.autoConfigureDistance = true;
@@ -40,6 +43,12 @@ public class ShootGrapple : MonoBehaviour
         lineRenderer.enabled = false;
         rb = GetComponent<Rigidbody2D>();
         markObject.enabled = false;
+
+        audioSource = GetComponent<AudioSource>();
+        if (hookSound != null)
+        {
+            audioSource.clip = hookSound;
+        }
     }
 
     void Update()
@@ -93,13 +102,17 @@ public class ShootGrapple : MonoBehaviour
         {
             grappleStartTime = Time.time;
             isTimerRunning = true;
-
             Vector2 mousepos = (Vector2)mainCamera.ScreenToWorldPoint(Input.mousePosition);
             lineRenderer.SetPosition(0, mousepos);
             lineRenderer.SetPosition(1, transform.position);
             Distancejoint.connectedAnchor = mousepos;
             Distancejoint.enabled = true;
             LinePosition.position = mousepos;
+
+            if (audioSource != null && hookSound != null)
+            {
+                audioSource.Play();
+            }
         }
 
         if (Input.GetKey(KeyCode.Mouse0))

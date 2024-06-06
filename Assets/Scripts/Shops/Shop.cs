@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Shop : MonoBehaviour
@@ -10,7 +11,14 @@ public class Shop : MonoBehaviour
     protected GameObject ItemPrefab;
     [SerializeField]
     protected Transform ItemLocation;
+    [SerializeField] Canvas ItemCanvas;
+    [SerializeField] TMP_Text text;
 
+
+    void Start()
+    {
+        ItemCanvas.enabled = false;
+    }
 
     [SerializeField]
     protected int ItemValue;
@@ -29,12 +37,15 @@ public class Shop : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             StandingIn = true;
+            ItemCanvas.enabled = true;
+            text.text = $"Press E to buy {ItemPrefab.name} for {ItemValue} coins";
         }
     }
     protected void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            ItemCanvas.enabled = false;
             StandingIn = false;
         }
     }
@@ -44,7 +55,8 @@ public class Shop : MonoBehaviour
     {
         if (StandingIn && !PlayerMovement.SecondJump && Collect.CoinAmount >= ItemValue)
         {
-            Collect.CoinAmount -= ItemValue;
+            
+            bonfire.BonfireCoin -= ItemValue;
             if (spawnCount < 1)
             {
                 Instantiate(ItemPrefab, ItemLocation.position, Quaternion.identity);

@@ -25,6 +25,8 @@ public class PlayerMovement : MonoBehaviour
     internal static bool SecondJump = false;
     private bool hasDoubleJumped = false;
 
+    [SerializeField] Animator anim;
+
 
 
     [SerializeField]    
@@ -62,11 +64,25 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             xMove = Walkspeed;
+            anim.SetBool("Run", false);
+
+        }
+        if (Input.GetKeyUp(KeyCode.D))
+        {
+            anim.SetBool("Run", true);
+
         }
         if (Input.GetKey(KeyCode.A))
         {
             xMove = -Walkspeed;
+            anim.SetBool("Run", false);
         }
+        if (Input.GetKeyUp(KeyCode.A))
+        {
+            anim.SetBool("Run", true);
+
+        }
+
 
         if (isGrounded)
         {

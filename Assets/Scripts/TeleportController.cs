@@ -24,7 +24,7 @@ public class TeleportController : MonoBehaviour
         {
             PlayerPref.SaveData();
 
-            if (DestinationScene == "CannalBossScene" && CannalBoss.CannalBossAlive == false)
+            if (DestinationScene == "CannalBossScene" && !CannalBoss.CannalBossAlive)
             {
                 SceneManagers.SetDestinaionDirection(destination);
                 SceneManager.LoadScene("CannalBossDeadScene");
@@ -33,6 +33,24 @@ public class TeleportController : MonoBehaviour
             {
                 SceneManagers.SetDestinaionDirection(destination);
                 SceneManager.LoadScene("CaveBossDeadScene");
+            }
+            else if (DestinationScene == "MerchantSafe" && merchant.Merchantsaved)
+            {
+                SceneManagers.SetDestinaionDirection(destination);
+                SceneManager.LoadScene("MerchantSaved");
+            }
+            else if (DestinationScene == "Store")
+            {
+                if(merchant.Merchantsaved)
+                {
+                    SceneManagers.SetDestinaionDirection(destination);
+                    SceneManager.LoadScene("Shop1");
+                }
+                else
+                {
+                    SceneManagers.SetDestinaionDirection(destination);
+                    SceneManager.LoadScene("MerchantNotSaved");
+                }
             }
             else
             {
@@ -49,8 +67,5 @@ public class TeleportController : MonoBehaviour
             PlayerPref.LoadData();
             player.position = spawnPosition.position;
         }
-
-        Debug.Log("Cave boss " + CaveBoss.CaveBossAlive);
-        Debug.Log("Cannal Boss " + CannalBoss.CannalBossAlive);
     }
 }

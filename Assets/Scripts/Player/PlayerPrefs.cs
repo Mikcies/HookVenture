@@ -16,6 +16,7 @@ public class PlayerPref : MonoBehaviour
         PlayerPrefs.SetInt("CellsTreasure", Collect.CellsTreasure);
         PlayerPrefs.SetInt("CannalBossAlive", CannalBoss.CannalBossAlive ? 1 : 0);
         PlayerPrefs.SetInt("CaveBossAlive", CaveBoss.CaveBossAlive ? 1 : 0);
+        PlayerPrefs.SetInt("MerchantSaved", merchant.Merchantsaved ? 1 : 0);
 
         PlayerPrefs.Save();
     }
@@ -31,6 +32,6 @@ public class PlayerPref : MonoBehaviour
         Collect.CellsTreasure = PlayerPrefs.GetInt("CellsTreasure");
         CannalBoss.CannalBossAlive = (PlayerPrefs.GetInt("CannalBossAlive") != 0);
         CaveBoss.CaveBossAlive = (PlayerPrefs.GetInt("CaaveBossAlive") != 0);
-
+        merchant.Merchantsaved = (PlayerPrefs.GetInt("MerchantSaved") != 0);
     }
 }

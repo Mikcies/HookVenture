@@ -9,14 +9,10 @@ using UnityEngine.UI;
 public class bonfire : MonoBehaviour
 {
     bool standin;
-    public static string currentSceneName = "TestRoom";
-    public static GameObject bonfireObject;
-    public static int BonfireCoin;
-    public static Vector3 playerPosition;
-
-
-   
-
+    internal static string currentSceneName = "TestRoom";
+    static GameObject bonfireObject;
+    internal static int BonfireCoin;
+    internal static Vector3 playerPosition;
 
     private void Start()
     {

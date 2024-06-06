@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/Locations/Cells/Cell1.unity
     guid: d11237dd8f78c6b48a2045130341e819
   - enabled: 1
+    path: Assets/Scenes/Levels/Shops/MerchantSafe.unity
+    guid: 877107953fe7236418b4182a187a4ead
+  - enabled: 1
     path: Assets/Scenes/Levels/Locations/New/Hub.unity
     guid: 1338c7f510bbdb94a925207f7338656f
   - enabled: 1
@@ -35,6 +38,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BossTrials.unity
     guid: 7e279942d87a6dd49b6d91e41225500b
+  - enabled: 1
+    path: Assets/Scenes/Levels/Shops/ShopWithoutMerchant.unity
+    guid: 529f9a7fd906ee345ae9f23a836cbf11
   - enabled: 1
     path: Assets/Scenes/Levels/Locations/Cave/CavesPart1.unity
     guid: e38c12a2d0e2b9545a6cae2575e25a13

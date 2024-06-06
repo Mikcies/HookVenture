@@ -59,7 +59,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2742279846365551161}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.13, y: -2.21, z: 0}
+  m_LocalPosition: {x: 2.85, y: -2.21, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -139,8 +139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemPrefab: {fileID: 7350186814326727224, guid: 2c8c2078b55c8f747946630064c761ca, type: 3}
   ItemLocation: {fileID: 2742279846365551142}
-  ItemValue: 50
-  collect: {fileID: 0}
+  ItemValue: 25
 --- !u!1001 &7591645270349287662
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -152,6 +151,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sprite
       objectReference: {fileID: 0}
+    - target: {fileID: 5716327810065291166, guid: c6d861bb5c14a52438109749b345ec1b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7ed8153abc5acb347a3353c14ef54e64, type: 3}
     - target: {fileID: 5716327810065291167, guid: c6d861bb5c14a52438109749b345ec1b, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -196,7 +199,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3155652297482279545, guid: c6d861bb5c14a52438109749b345ec1b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c6d861bb5c14a52438109749b345ec1b, type: 3}
 --- !u!4 &2742279847439058801 stripped
 Transform:

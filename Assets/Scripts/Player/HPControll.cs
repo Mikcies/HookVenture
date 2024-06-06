@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -27,7 +28,6 @@ public class HPControll : MonoBehaviour
     [SerializeField]
     float maxHitCooldownTime = 1.0f;
 
-    private Vector2 playerDeathPosition;
     
     void Start()
     {
@@ -42,10 +42,11 @@ public class HPControll : MonoBehaviour
     }
     private void OnEnable()
     {
+        sceneLoaded(bonfire.currentSceneName, LoadSceneMode.Single);
     }
     void sceneLoaded(string scene, LoadSceneMode mode)
     {
-        scene = bonfire.currentSceneName.ToString();
+        //SetPlayerToBonfire();
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -70,7 +71,6 @@ public class HPControll : MonoBehaviour
         }
         else if (CurrHP <= 0)
         {
-            playerDeathPosition = transform.position;
             CurrHP = 1;
             Collect.CoinAmount = 0;
             SetPlayerToBonfire();
@@ -122,22 +122,10 @@ public class HPControll : MonoBehaviour
     }
     private void SetPlayerToBonfire()
     {
-        StartCoroutine(LoadSceneAsyncAndSetPlayerPosition());
+      transform.position = bonfire.playerPosition;
     }
 
-    private IEnumerator LoadSceneAsyncAndSetPlayerPosition()
-    {
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(bonfire.currentSceneName);
-
-        while (!asyncLoad.isDone)
-        {
-            yield return null;
-        }
-
-        yield return null;
-
-        transform.position = bonfire.playerPosition;
-    }
+    
 
 
 
