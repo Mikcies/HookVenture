@@ -550,11 +550,20 @@ PrefabInstance:
       propertyPath: leverCanvas
       value: 
       objectReference: {fileID: 1649369700}
+    - target: {fileID: 6507241038287807694, guid: 05799dc57b1f35745ae21e1b0475d486, type: 3}
+      propertyPath: leverRenderer
+      value: 
+      objectReference: {fileID: 24893156}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05799dc57b1f35745ae21e1b0475d486, type: 3}
 --- !u!4 &24893155 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6507241038287807680, guid: 05799dc57b1f35745ae21e1b0475d486, type: 3}
+  m_PrefabInstance: {fileID: 24893154}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &24893156 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6507241038287807695, guid: 05799dc57b1f35745ae21e1b0475d486, type: 3}
   m_PrefabInstance: {fileID: 24893154}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &88907460
@@ -2899,8 +2908,17 @@ PrefabInstance:
       propertyPath: leverCanvas
       value: 
       objectReference: {fileID: 484319673}
+    - target: {fileID: 6507241038287807694, guid: 05799dc57b1f35745ae21e1b0475d486, type: 3}
+      propertyPath: leverRenderer
+      value: 
+      objectReference: {fileID: 630032867}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05799dc57b1f35745ae21e1b0475d486, type: 3}
+--- !u!212 &630032867 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6507241038287807695, guid: 05799dc57b1f35745ae21e1b0475d486, type: 3}
+  m_PrefabInstance: {fileID: 630032866}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &631862080 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6507241038287807680, guid: 05799dc57b1f35745ae21e1b0475d486, type: 3}
@@ -3112,8 +3130,17 @@ PrefabInstance:
       propertyPath: leverCanvas
       value: 
       objectReference: {fileID: 2064333235}
+    - target: {fileID: 6507241038287807694, guid: 05799dc57b1f35745ae21e1b0475d486, type: 3}
+      propertyPath: leverRenderer
+      value: 
+      objectReference: {fileID: 669303128}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05799dc57b1f35745ae21e1b0475d486, type: 3}
+--- !u!212 &669303128 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6507241038287807695, guid: 05799dc57b1f35745ae21e1b0475d486, type: 3}
+  m_PrefabInstance: {fileID: 669303127}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &688996361
 PrefabInstance:
   m_ObjectHideFlags: 0
