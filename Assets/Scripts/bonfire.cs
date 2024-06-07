@@ -13,15 +13,19 @@ public class bonfire : MonoBehaviour
     static GameObject bonfireObject;
     internal static int BonfireCoin;
     internal static Vector3 playerPosition;
-
+    [SerializeField] Canvas bonfireCanvas;
+    [SerializeField] TMP_Text text;
     private void Start()
     {
+        bonfireCanvas.enabled = false;
     }
 
     protected void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            bonfireCanvas.enabled = true;
+            text.text = $"Press E to store your coins and set spawn point";
             standin = true;
             playerPosition = other.transform.position;
         }
@@ -31,6 +35,7 @@ public class bonfire : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            bonfireCanvas.enabled = false;
             standin = false;
         }
     }

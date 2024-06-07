@@ -76,7 +76,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2742279846910573486}
   - component: {fileID: 2742279846910573484}
-  - component: {fileID: 2742279846910573487}
   m_Layer: 0
   m_Name: PlaceDetection
   m_TagString: Untagged
@@ -125,21 +124,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &2742279846910573487
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2742279846910573473}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89f79185ec15c1048a1d6d2ebdae68a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ItemPrefab: {fileID: 7350186814326727224, guid: 2c8c2078b55c8f747946630064c761ca, type: 3}
-  ItemLocation: {fileID: 2742279846365551142}
-  ItemValue: 25
 --- !u!1001 &7591645270349287662
 PrefabInstance:
   m_ObjectHideFlags: 0

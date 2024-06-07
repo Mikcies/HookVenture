@@ -1,23 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
-public class Shop3 : MonoBehaviour
+public class ShopDash : MonoBehaviour
 {
-    protected int spawnCount = 0;
-    protected bool StandingIn = false;
+    private int spawnCount = 0;
+    private bool StandingIn;
     [SerializeField]
     protected GameObject ItemPrefab;
     [SerializeField]
-    protected Transform ItemLocation;
-
-
+    private Transform ItemLocation;
+    [SerializeField] Canvas ItemCanvas;
+    [SerializeField] TMP_Text text;
     [SerializeField]
-    protected int ItemValue;
+    int ItemValue;
 
-    PlayerMovement move = new PlayerMovement();
-    public Collect collect;
-    protected void Update()
+    void Start()
+    {
+        ItemCanvas.enabled = false;
+    }
+
+
+
+    protected virtual void Update()
     {
         if (Input.GetKey(KeyCode.E))
         {
@@ -30,12 +36,15 @@ public class Shop3 : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             StandingIn = true;
+            ItemCanvas.enabled = true;
+            text.text = $"Press E to buy {ItemPrefab.name} for {ItemValue} coins";
         }
     }
     protected void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            ItemCanvas.enabled = false;
             StandingIn = false;
         }
     }
@@ -43,9 +52,9 @@ public class Shop3 : MonoBehaviour
 
     protected virtual void CanShop()
     {
-        if (StandingIn && !PlayerMovement.SecondJump && Collect.CoinAmount >= ItemValue)
+        if (StandingIn && !PlayerMovement.Dash && Collect.CoinAmount >= ItemValue)
         {
-            Collect.CoinAmount -= ItemValue;
+            bonfire.BonfireCoin -= ItemValue;
             if (spawnCount < 1)
             {
                 Instantiate(ItemPrefab, ItemLocation.position, Quaternion.identity);
