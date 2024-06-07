@@ -715,7 +715,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bf74b6d0b5a672438bf0388676ddbb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scenename: 
+  scenename: Hub
 --- !u!114 &494928482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -759,7 +759,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 494928483}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 494928481}
+        m_TargetAssemblyTypeName: ButtonRespond, Assembly-CSharp
+        m_MethodName: ResetGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &494928483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1085,7 +1097,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Start
+  m_text: Continue
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
@@ -1249,7 +1261,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 879045739}
         m_TargetAssemblyTypeName: ButtonRespond, Assembly-CSharp
-        m_MethodName: LoadScene
+        m_MethodName: Continue
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1309,7 +1321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bf74b6d0b5a672438bf0388676ddbb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scenename: CannalsPart1
+  scenename: Hub
 --- !u!1 &1071450721
 GameObject:
   m_ObjectHideFlags: 0
@@ -1368,7 +1380,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Save
+  m_text: New Game
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

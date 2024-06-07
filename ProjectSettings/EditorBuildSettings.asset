@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
+    path: Assets/Scenes/TestRoom.unity
+    guid: 10bc36dd689382e4b8d7eedc225addd7
+  - enabled: 1
     path: Assets/Scenes/Levels/Boss Rooms/CannalBossScene.unity
     guid: eb558d1a5e9f1aa4b92db734b686b38e
   - enabled: 1
@@ -17,9 +20,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/Locations/Cannals/Sewers2.unity
     guid: feb4222c09d82ef409449c9201001b36
-  - enabled: 1
-    path: Assets/Scenes/TestRoom.unity
-    guid: 10bc36dd689382e4b8d7eedc225addd7
   - enabled: 1
     path: Assets/Scenes/Levels/Locations/Cells/Cell1.unity
     guid: d11237dd8f78c6b48a2045130341e819
@@ -48,11 +48,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/Boss Rooms/DeadBoss/CannalBossDeadScene.unity
     guid: 85ccfe086ee5ad0428e833b6b23a4d08
   - enabled: 1
-    path: Assets/Scenes/Levels/Shops/Shop2.unity
-    guid: e854887b04d43dc4b87e2ec99b7127c4
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/Levels/Shops/Shop3.unity
-    guid: e070b0fef4d889147b58f52c45fa3a96
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Levels/Shops/Shop1.unity
     guid: 2221daa88a3181e46bf51a39ef385ade

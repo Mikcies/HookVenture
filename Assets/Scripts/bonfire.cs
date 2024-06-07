@@ -9,12 +9,13 @@ using UnityEngine.UI;
 public class bonfire : MonoBehaviour
 {
     bool standin;
-    internal static string currentSceneName = "TestRoom";
+    internal static string currentSceneName;
     static GameObject bonfireObject;
     internal static int BonfireCoin;
     internal static Vector3 playerPosition;
     [SerializeField] Canvas bonfireCanvas;
     [SerializeField] TMP_Text text;
+    [SerializeField] HPControll controll;
     private void Start()
     {
         bonfireCanvas.enabled = false;
@@ -52,6 +53,8 @@ public class bonfire : MonoBehaviour
             currentSceneName = SceneManager.GetActiveScene().name;
             BonfireCoin += Collect.CoinAmount;
             Collect.CoinAmount = 0;
+            HPControll.CurrHP = controll.MaxHP;
+            Debug.Log(HPControll.CurrHP);
             playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
         }
     }

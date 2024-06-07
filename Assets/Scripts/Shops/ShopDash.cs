@@ -21,8 +21,6 @@ public class ShopDash : MonoBehaviour
         ItemCanvas.enabled = false;
     }
 
-
-
     protected virtual void Update()
     {
         if (Input.GetKey(KeyCode.E))
@@ -31,7 +29,7 @@ public class ShopDash : MonoBehaviour
         }
     }
 
-    protected void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
@@ -40,7 +38,7 @@ public class ShopDash : MonoBehaviour
             text.text = $"Press E to buy {ItemPrefab.name} for {ItemValue} coins";
         }
     }
-    protected void OnTriggerExit2D(Collider2D other)
+    private void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
@@ -50,7 +48,7 @@ public class ShopDash : MonoBehaviour
     }
 
 
-    protected virtual void CanShop()
+    private void CanShop()
     {
         if (StandingIn && !PlayerMovement.Dash && Collect.CoinAmount >= ItemValue)
         {

@@ -440,3 +440,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bonfireCanvas: {fileID: 1427171160}
   text: {fileID: 747965959}
+  controll: {fileID: 0}

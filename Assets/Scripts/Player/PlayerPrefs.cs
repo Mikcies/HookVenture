@@ -17,7 +17,7 @@ public class PlayerPref : MonoBehaviour
         PlayerPrefs.SetInt("CannalBossAlive", CannalBoss.CannalBossAlive ? 1 : 0);
         PlayerPrefs.SetInt("CaveBossAlive", CaveBoss.CaveBossAlive ? 1 : 0);
         PlayerPrefs.SetInt("MerchantSaved", merchant.Merchantsaved ? 1 : 0);
-
+        PlayerPrefs.SetString("SceneSaved", bonfire.currentSceneName);
         PlayerPrefs.Save();
     }
     internal static void LoadData()

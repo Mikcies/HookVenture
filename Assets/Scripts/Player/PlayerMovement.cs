@@ -21,7 +21,6 @@ public class PlayerMovement : MonoBehaviour
     private LayerMask floorLayerMask;
 
     private bool isGrounded = false;
-    [SerializeField]
     internal static bool SecondJump = false;
     private bool hasDoubleJumped = false;
 
@@ -29,7 +28,6 @@ public class PlayerMovement : MonoBehaviour
 
 
 
-    [SerializeField]    
     internal static bool Dash = false;
     bool canDash = true;
     bool isDashing;
@@ -45,6 +43,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         tr = GetComponent<TrailRenderer>();
+        
     }
     void Update()
     {

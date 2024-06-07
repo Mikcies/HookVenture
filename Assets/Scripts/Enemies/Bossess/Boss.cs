@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using UnityEngine;
 
 public abstract class Boss : MonoBehaviour
@@ -7,7 +8,7 @@ public abstract class Boss : MonoBehaviour
     protected int CurrHp;
     [SerializeField] protected float MoveSpeed;
     protected Rigidbody2D rb;
-    [field: SerializeField] SpriteRenderer renderer;
+    [SerializeField] SpriteRenderer renderer;
     protected void Start()
     {
         player = GameObject.FindWithTag("Player").transform;

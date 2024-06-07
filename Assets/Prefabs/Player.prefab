@@ -195,7 +195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10224ca8eaeb2e64ab29df94647bc93e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Walkspeed: 8
+  Walkspeed: 10
   Jump: 5.5
   Ray: {fileID: 6084137093691057612}
   floorLayerMask:
@@ -362,7 +362,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: -77.2439, y: 34.056885}
   m_AutoConfigureDistance: 1
-  m_Distance: 94.59336
+  m_Distance: 27.153435
   m_MaxDistanceOnly: 1
 --- !u!114 &6084137093855973661
 MonoBehaviour:

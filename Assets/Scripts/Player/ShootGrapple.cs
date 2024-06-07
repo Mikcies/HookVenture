@@ -32,7 +32,6 @@ public class ShootGrapple : MonoBehaviour
     bool isTimerRunning;
     float markDisplayTime;
 
-    // New fields for audio
     [SerializeField] AudioClip hookSound;
     private AudioSource audioSource;
 
@@ -43,7 +42,6 @@ public class ShootGrapple : MonoBehaviour
         lineRenderer.enabled = false;
         rb = GetComponent<Rigidbody2D>();
         markObject.enabled = false;
-
         audioSource = GetComponent<AudioSource>();
         if (hookSound != null)
         {

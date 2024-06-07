@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class HPControll : MonoBehaviour
 {
     [SerializeField]
-    private int MaxHP;
+    internal int MaxHP;
     [SerializeField]
     internal static int CurrHP;
 
@@ -42,7 +42,7 @@ public class HPControll : MonoBehaviour
     }
     private void OnEnable()
     {
-        sceneLoaded(bonfire.currentSceneName, LoadSceneMode.Single);
+        //sceneLoaded(bonfire.currentSceneName, LoadSceneMode.Single);
     }
     void sceneLoaded(string scene, LoadSceneMode mode)
     {

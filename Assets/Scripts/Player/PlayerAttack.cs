@@ -44,10 +44,7 @@ public class PlayerAttack : MonoBehaviour
                 {
                     boss.TakeDamage();
                 }
-                else if (collider.gameObject.TryGetComponent<Ghost>(out var ghost))
-                {
-                    ghost.TakeDamage();
-                }
+                
             }
         }
     }
