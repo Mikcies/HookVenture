@@ -652,6 +652,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   door: {fileID: 1583216899}
+  leverRenderer: {fileID: 183432613}
   leverCanvas: {fileID: 83168783}
   text: {fileID: 601542229}
   message: Press E to open door to Secret
@@ -4200,7 +4201,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4598534046362873080, guid: 4eca1bd06a2548c40b287c3f8a402203, type: 3}
       propertyPath: DestinationScene
-      value: Cell0
+      value: Cell2
       objectReference: {fileID: 0}
     - target: {fileID: 4598534046362873083, guid: 4eca1bd06a2548c40b287c3f8a402203, type: 3}
       propertyPath: m_Name
@@ -4401,6 +4402,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4598534046362873080, guid: 4eca1bd06a2548c40b287c3f8a402203, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1467746403}
+    - target: {fileID: 4598534046362873080, guid: 4eca1bd06a2548c40b287c3f8a402203, type: 3}
       propertyPath: source
       value: 1
       objectReference: {fileID: 0}
@@ -4410,7 +4415,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4598534046362873080, guid: 4eca1bd06a2548c40b287c3f8a402203, type: 3}
       propertyPath: DestinationScene
-      value: Secret1
+      value: Hub
       objectReference: {fileID: 0}
     - target: {fileID: 4598534046362873083, guid: 4eca1bd06a2548c40b287c3f8a402203, type: 3}
       propertyPath: m_Name
@@ -4422,15 +4427,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4598534046362873086, guid: 4eca1bd06a2548c40b287c3f8a402203, type: 3}
       propertyPath: m_LocalScale.y
-      value: 12.234375
+      value: 24.77461
       objectReference: {fileID: 0}
     - target: {fileID: 4598534046362873086, guid: 4eca1bd06a2548c40b287c3f8a402203, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -194.70265
+      value: -114
       objectReference: {fileID: 0}
     - target: {fileID: 4598534046362873086, guid: 4eca1bd06a2548c40b287c3f8a402203, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.679779
+      value: -2.8
       objectReference: {fileID: 0}
     - target: {fileID: 4598534046362873086, guid: 4eca1bd06a2548c40b287c3f8a402203, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4438,7 +4443,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4598534046362873086, guid: 4eca1bd06a2548c40b287c3f8a402203, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 4598534046362873086, guid: 4eca1bd06a2548c40b287c3f8a402203, type: 3}
       propertyPath: m_LocalRotation.x
@@ -4450,7 +4455,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4598534046362873086, guid: 4eca1bd06a2548c40b287c3f8a402203, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 4598534046362873086, guid: 4eca1bd06a2548c40b287c3f8a402203, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4462,15 +4467,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4598534046362873086, guid: 4eca1bd06a2548c40b287c3f8a402203, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 4598534046789892257, guid: 4eca1bd06a2548c40b287c3f8a402203, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6
+      value: 4.1
       objectReference: {fileID: 0}
     - target: {fileID: 4598534046789892257, guid: 4eca1bd06a2548c40b287c3f8a402203, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.39
+      value: -0.569
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4eca1bd06a2548c40b287c3f8a402203, type: 3}
@@ -8194,10 +8199,19 @@ PrefabInstance:
       propertyPath: leverCanvas
       value: 
       objectReference: {fileID: 847651798}
+    - target: {fileID: 6507241038287807694, guid: 05799dc57b1f35745ae21e1b0475d486, type: 3}
+      propertyPath: leverRenderer
+      value: 
+      objectReference: {fileID: 6507241037782007370}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05799dc57b1f35745ae21e1b0475d486, type: 3}
 --- !u!4 &6507241037782007369 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6507241038287807680, guid: 05799dc57b1f35745ae21e1b0475d486, type: 3}
+  m_PrefabInstance: {fileID: 6507241037782007368}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &6507241037782007370 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6507241038287807695, guid: 05799dc57b1f35745ae21e1b0475d486, type: 3}
   m_PrefabInstance: {fileID: 6507241037782007368}
   m_PrefabAsset: {fileID: 0}
