@@ -96,7 +96,7 @@ public class PlayerMovement : MonoBehaviour
             }
             else if (!hasDoubleJumped && SecondJump)
             {
-                yMove = Jump;
+                yMove = 7f;
                 hasDoubleJumped = true;
             }
         }
