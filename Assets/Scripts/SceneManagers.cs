@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class SceneManagers : MonoBehaviour
 {
@@ -15,5 +17,14 @@ public class SceneManagers : MonoBehaviour
     public static void SetDestinaionDirection(directions direction)
     {
         DestinationDirection = direction;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            PlayerPrefs.Save();
+            SceneManager.LoadScene("MainMenu");
+        }
     }
 }

@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class HPControll : MonoBehaviour
 {
     [SerializeField]
-    public int MaxHP;
+    internal int MaxHP;
     [SerializeField]
     internal static int CurrHP;
 

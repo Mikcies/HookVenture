@@ -9,11 +9,6 @@ public class ButtonRespond : MonoBehaviour
     string scenename;
 
     string sceneFromPlayerPrefs;
-
-    private void Start()
-    {
-
-    }
     public void LeaveGame()
     {
         Application.Quit();
@@ -27,12 +22,14 @@ public class ButtonRespond : MonoBehaviour
         sceneFromPlayerPrefs = PlayerPrefs.GetString("SavedScene");
         if(PlayerPrefs.GetString("SavedScene") == "")
         {
-            SceneManager.LoadScene("TestRoom");
             PlayerPrefs.DeleteAll();
+            SceneManager.LoadScene("Tutorial");
         }
-        SceneManager.LoadScene(sceneFromPlayerPrefs);
-        PlayerPref.LoadData();
-
+        else
+        {
+            SceneManager.LoadScene(sceneFromPlayerPrefs);
+            PlayerPref.LoadData();
+        }
     }
     public void NewGame()
     {
