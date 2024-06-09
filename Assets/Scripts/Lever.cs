@@ -5,7 +5,7 @@ using TMPro;
 public class Lever : MonoBehaviour
 {
     [SerializeField] GameObject door;
-    [SerializeField] SpriteRenderer leverRenderer;
+
     private Collider2D doorCollider;
     private SpriteRenderer doorSpriteRenderer;
 
@@ -28,6 +28,7 @@ public class Lever : MonoBehaviour
     {
         if (StandingIn && Input.GetKeyDown(KeyCode.E) && !isActivated)
         {
+
             ActivateLever();
         }
     }
@@ -51,7 +52,7 @@ public class Lever : MonoBehaviour
     private void ActivateLever()
     {
         isActivated = true;
-        leverRenderer.flipY = !leverRenderer.flipY;
+
         if (doorCollider != null)
         {
             doorCollider.enabled = false;
