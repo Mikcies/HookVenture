@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/TestRoom.unity
     guid: 10bc36dd689382e4b8d7eedc225addd7
   - enabled: 1
+    path: Assets/Scenes/Levels/Locations/New/Tutorial.unity
+    guid: b6061a0baa9bba94ea1a717ce2433c43
+  - enabled: 1
     path: Assets/Scenes/Levels/Boss Rooms/CannalBossScene.unity
     guid: eb558d1a5e9f1aa4b92db734b686b38e
   - enabled: 1
@@ -47,12 +50,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/Boss Rooms/DeadBoss/CannalBossDeadScene.unity
     guid: 85ccfe086ee5ad0428e833b6b23a4d08
-  - enabled: 1
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 1
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Levels/Shops/Shop1.unity
     guid: 2221daa88a3181e46bf51a39ef385ade

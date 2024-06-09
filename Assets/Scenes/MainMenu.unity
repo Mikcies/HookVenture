@@ -762,7 +762,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 494928481}
         m_TargetAssemblyTypeName: ButtonRespond, Assembly-CSharp
-        m_MethodName: ResetGame
+        m_MethodName: NewGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,11 +7,12 @@ public class ButtonRespond : MonoBehaviour
 {
     [SerializeField]
     string scenename;
+
     string sceneFromPlayerPrefs;
 
     private void Start()
     {
-        Debug.Log("PlayerPref " + PlayerPrefs.GetString("SavedScene"));
+
     }
     public void LeaveGame()
     {
@@ -35,7 +36,7 @@ public class ButtonRespond : MonoBehaviour
     }
     public void NewGame()
     {
-        SceneManager.LoadScene("Tutorial");
         PlayerPrefs.DeleteAll();
+        SceneManager.LoadScene("Tutorial");
     }
 }
