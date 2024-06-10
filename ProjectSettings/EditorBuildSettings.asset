@@ -48,9 +48,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/Locations/Cave/CavesPart1.unity
     guid: e38c12a2d0e2b9545a6cae2575e25a13
   - enabled: 1
-    path: Assets/Scenes/Levels/Boss Rooms/DeadBoss/CannalBossDeadScene.unity
-    guid: 85ccfe086ee5ad0428e833b6b23a4d08
-  - enabled: 1
     path: Assets/Scenes/Levels/Shops/Shop1.unity
     guid: 2221daa88a3181e46bf51a39ef385ade
+  - enabled: 1
+    path: Assets/Scenes/Levels/Boss Rooms/DeadBoss/CannalBossDeadScene.unity
+    guid: 37088882491d8674a9f08ccb942f1a80
   m_configObjects: {}

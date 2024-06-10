@@ -285,8 +285,12 @@ PrefabInstance:
       value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 4598534046789892257, guid: 4eca1bd06a2548c40b287c3f8a402203, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4598534046789892257, guid: 4eca1bd06a2548c40b287c3f8a402203, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.43
+      value: -5.4
       objectReference: {fileID: 0}
     - target: {fileID: 4598534046789892257, guid: 4eca1bd06a2548c40b287c3f8a402203, type: 3}
       propertyPath: m_LocalPosition.y
@@ -410,10 +414,6 @@ PrefabInstance:
     - target: {fileID: 6084137093855973658, guid: 8003c733d7f3942439296ae6caaac93e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6084137093855973660, guid: 8003c733d7f3942439296ae6caaac93e, type: 3}
-      propertyPath: m_Distance
-      value: 94.59336
       objectReference: {fileID: 0}
     - target: {fileID: 6084137093855973661, guid: 8003c733d7f3942439296ae6caaac93e, type: 3}
       propertyPath: mainCamera
