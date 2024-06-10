@@ -260,7 +260,7 @@ PrefabInstance:
     - target: {fileID: 4598534046362873080, guid: 4eca1bd06a2548c40b287c3f8a402203, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 458418177}
     - target: {fileID: 4598534046362873080, guid: 4eca1bd06a2548c40b287c3f8a402203, type: 3}
       propertyPath: source
       value: 2
@@ -271,7 +271,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4598534046362873080, guid: 4eca1bd06a2548c40b287c3f8a402203, type: 3}
       propertyPath: DestinationScene
-      value: CannalBossScene
+      value: EndTitle
       objectReference: {fileID: 0}
     - target: {fileID: 4598534046362873083, guid: 4eca1bd06a2548c40b287c3f8a402203, type: 3}
       propertyPath: m_Name

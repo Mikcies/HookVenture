@@ -11,6 +11,9 @@ public class reset : MonoBehaviour
             PlayerMovement.Dash = false;
             PlayerMovement.SecondJump = false;
             ShootGrapple.Claw = false;
+            CannalBoss.CannalBossAlive = false;
+            CaveBoss.CaveBossAlive = false;
+
         }
     }
 }

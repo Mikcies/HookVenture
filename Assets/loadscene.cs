@@ -22,6 +22,8 @@ public class loadscene : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            PlayerPrefs.SetInt("CaveBossAlive", 1);
+            PlayerPrefs.SetInt("CannalBossAlive", 1);
             SceneManager.LoadScene("Hub");
         }
     }

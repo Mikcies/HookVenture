@@ -19,8 +19,8 @@ public class ButtonRespond : MonoBehaviour
     }
     public void Continue()
     {
-        sceneFromPlayerPrefs = PlayerPrefs.GetString("SavedScene");
-        if(PlayerPrefs.GetString("SavedScene") == "")
+        string sceneFromPrefs = PlayerPrefs.GetString("BonfireScene");
+        if(sceneFromPlayerPrefs == "")
         {
             PlayerPrefs.DeleteAll();
             SceneManager.LoadScene("Tutorial");
@@ -35,5 +35,10 @@ public class ButtonRespond : MonoBehaviour
     {
         PlayerPrefs.DeleteAll();
         SceneManager.LoadScene("Tutorial");
+    }
+    private void Update()
+    {
+        Debug.Log(sceneFromPlayerPrefs);
+
     }
 }

@@ -26,7 +26,7 @@ public class PathToCells : MonoBehaviour
     {
         leverCanvas.enabled = false;
         target = pointA;
-        Debug.Log(CannalBoss.CannalBossAlive);
+        Debug.Log(PlayerPrefs.GetInt("CannalBossAlive"));
     }
 
     void Update()
@@ -39,7 +39,6 @@ public class PathToCells : MonoBehaviour
         {
             PlatformMove();
         }
-        Debug.Log(target);
     }
     protected void OnTriggerEnter2D(Collider2D other)
     {
@@ -70,13 +69,11 @@ public class PathToCells : MonoBehaviour
     private void PlatformMove()
     {
         float distance = Vector2.Distance(platform.transform.position, target.position);
-        Debug.Log("Distance to target: " + distance);
 
         platform.transform.position = Vector2.MoveTowards(platform.transform.position, target.position, MoveSpeed * Time.deltaTime);
 
         if (distance < 0.1f)
         {
-            Debug.Log("Switching target");
             target = (target == pointA) ? pointB : pointA;
         }
     }

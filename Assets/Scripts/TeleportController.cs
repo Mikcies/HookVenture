@@ -18,12 +18,13 @@ public class TeleportController : MonoBehaviour
     [SerializeField]
     Transform spawnPosition;
 
+    internal static string sceneOnSave;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            sceneOnSave = SceneManager.GetActiveScene().name;
             PlayerPref.SaveData();
-
             if (DestinationScene == "CannalBossScene" && !CannalBoss.CannalBossAlive)
             {
                 SceneManagers.SetDestinaionDirection(destination);
