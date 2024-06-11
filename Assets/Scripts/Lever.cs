@@ -51,7 +51,7 @@ public class Lever : MonoBehaviour
     private void ActivateLever()
     {
         isActivated = true;
-        leverRenderer.flipY = !leverRenderer.flipY;
+        leverRenderer.flipX = !leverRenderer.flipX;
         if (doorCollider != null)
         {
             doorCollider.enabled = false;
