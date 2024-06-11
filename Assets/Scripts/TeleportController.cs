@@ -62,7 +62,7 @@ public class TeleportController : MonoBehaviour
         }
     }
 
-    void Start()
+    void Awake()
     {
         if (source == SceneManagers.DestinationDirection)
         {

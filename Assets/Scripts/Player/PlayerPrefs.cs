@@ -6,8 +6,8 @@ public class PlayerPref : MonoBehaviour
 {
     internal static void SaveData()
     {
-        PlayerPrefs.SetInt("SavedHP", HPControll.CurrHP);
         PlayerPrefs.SetInt("SavedCoins", Collect.CoinAmount);
+        PlayerPrefs.SetInt("SavedHP", HPControll.CurrHP);
         PlayerPrefs.SetInt("Dash", (PlayerMovement.Dash ? 1 : 0));
         PlayerPrefs.SetInt("SecondJump", (PlayerMovement.SecondJump ? 1 : 0));
         PlayerPrefs.SetInt("Claw", (ShootGrapple.Claw ? 1 : 0));

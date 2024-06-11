@@ -23,8 +23,7 @@ public class ButtonRespond : MonoBehaviour
 
         if (string.IsNullOrEmpty(sceneFromPrefs))
         {
-            PlayerPrefs.DeleteAll();
-            SceneManager.LoadScene("Tutorial");
+            NewGame();
         }
         else if (string.IsNullOrEmpty(loadedscene))
         {
@@ -37,6 +36,7 @@ public class ButtonRespond : MonoBehaviour
     public void NewGame()
     {
         PlayerPrefs.DeleteAll();
+        PlayerPrefs.SetInt("SavedCoins", 0);
         SceneManager.LoadScene("Tutorial");
     }
 }

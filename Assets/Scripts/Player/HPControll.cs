@@ -27,12 +27,16 @@ public class HPControll : MonoBehaviour
     private float hitCooldownTimer = 0f;
     [SerializeField]
     float maxHitCooldownTime = 1.0f;
-
-    
-    void Start()
+    private void Awake()
     {
         MaxHP = 5;
         CurrHP = MaxHP;
+    }
+
+    void Start()
+    {
+        CurrHP = PlayerPrefs.GetInt("SavedHP");
+
     }
     void Update()
     {
@@ -48,7 +52,7 @@ public class HPControll : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Bullet"))
         {
-            Debug.Log(CurrHP);
+            
             Destroy(collision.gameObject);
             IsHit();  
         }
@@ -115,7 +119,14 @@ public class HPControll : MonoBehaviour
     }
     private void SetPlayerToBonfire()
     {
-        SceneManager.LoadScene(bonfire.currentSceneName);
+        if (string.IsNullOrEmpty(bonfire.currentSceneName))
+        {
+            SceneManager.LoadScene("Hub");
+        }
+        else
+        {
+            SceneManager.LoadScene(bonfire.currentSceneName);
+        }
     }
 
     

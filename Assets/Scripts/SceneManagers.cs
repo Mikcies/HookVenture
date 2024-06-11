@@ -32,5 +32,7 @@ public class SceneManagers : MonoBehaviour
     {
         string currScene = SceneManager.GetActiveScene().name;
         PlayerPrefs.SetString("LastScene",currScene);
+        Debug.Log("CurrHP: " + HPControll.CurrHP);
+        Debug.Log("PlayerPrefHP: " + PlayerPrefs.GetInt("SavedHP"));
     }
 }

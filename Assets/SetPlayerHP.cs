@@ -7,10 +7,14 @@ public class SetPlayerHP : MonoBehaviour
 
     [SerializeField] HPControll controll;
 
-    void Start()
+    private void Awake()
     {
         HPControll.CurrHP = controll.MaxHP;
-        PlayerPrefs.SetInt("SavedHP", 5);
+        PlayerPrefs.SetInt("SavedHP", HPControll.CurrHP);
+    }
+    void Start()
+    {
+       
     }
 
     void Update()
