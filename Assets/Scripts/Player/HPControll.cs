@@ -48,6 +48,7 @@ public class HPControll : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Bullet"))
         {
+            Debug.Log(CurrHP);
             Destroy(collision.gameObject);
             IsHit();  
         }
@@ -61,7 +62,7 @@ public class HPControll : MonoBehaviour
             hitCooldownTimer = maxHitCooldownTime;
             GetComponent<SpriteRenderer>().color = Color.red;
         }
-        else if (CurrHP <= 0)
+        else if (CurrHP == 0)
         {
             Collect.CoinAmount = 0;
             CurrHP = MaxHP;
