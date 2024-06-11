@@ -71,8 +71,9 @@ public class HPControll : MonoBehaviour
         }
         else if (CurrHP <= 0)
         {
-            CurrHP = 1;
             Collect.CoinAmount = 0;
+            CurrHP = MaxHP;
+            SetPlayerToBonfire();
         }
     }
     private void GenerateHealthBar()
@@ -121,7 +122,7 @@ public class HPControll : MonoBehaviour
     }
     private void SetPlayerToBonfire()
     {
-      transform.position = bonfire.playerPosition;
+        SceneManager.LoadScene(bonfire.currentSceneName);
     }
 
     

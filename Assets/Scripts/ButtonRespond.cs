@@ -31,11 +31,8 @@ public class ButtonRespond : MonoBehaviour
             SceneManager.LoadScene(loadedscene);
             PlayerPref.LoadData();
         }
-        else
-        {
-            SceneManager.LoadScene(sceneFromPrefs);
-            PlayerPref.LoadData();
-        }
+
+
     }
     public void NewGame()
     {

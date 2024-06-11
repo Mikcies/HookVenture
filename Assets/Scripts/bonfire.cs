@@ -54,7 +54,6 @@ public class bonfire : MonoBehaviour
             BonfireCoin += Collect.CoinAmount;
             Collect.CoinAmount = 0;
             HPControll.CurrHP = controll.MaxHP;
-            Debug.Log(HPControll.CurrHP);
             playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
         }
     }
