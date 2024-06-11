@@ -16,6 +16,6 @@ public class ExplorationEdit1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        text.text = "Cells are explored for x%";
+        text.text = $"Treasures found in the sewers{Collect.CellsTreasure}/5";
     }
 }
