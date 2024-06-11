@@ -25,7 +25,7 @@ public class ShopSecondJump : MonoBehaviour
 
     protected virtual void Update()
     {
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             CanShop();
         }
@@ -52,7 +52,7 @@ public class ShopSecondJump : MonoBehaviour
 
     protected virtual void CanShop()
     {
-        if (StandingIn && !PlayerMovement.SecondJump && Collect.CoinAmount >= ItemValue)
+        if (StandingIn && !PlayerMovement.SecondJump && bonfire.BonfireCoin >= ItemValue)
         {
             bonfire.BonfireCoin -= ItemValue;
             if (spawnCount < 1)

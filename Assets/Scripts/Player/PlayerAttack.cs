@@ -1,51 +1,59 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    [SerializeField]
-    private Transform AttackPlace;
-    [SerializeField]
-    private float AttackRadius;
-    [SerializeField]
-    private LayerMask EnemyMask;
+    public GameObject AttackImage;
+    public Transform AttackPlace;
+    public float AttackRadius;
+    public LayerMask EnemyMask;
+    public AudioSource audioSource;
+    public AudioClip attackSound;
 
-    [SerializeField] AudioClip attackSound;
-    private AudioSource audioSource;
+    private float timer = 0f;
 
-    void Start()
+    private void Start()
     {
-        audioSource = GetComponent<AudioSource>();
-        if (attackSound != null)
-        {
-            audioSource.clip = attackSound;
-        }
+        AttackImage.SetActive(false);
+
     }
-
-    void Update() => Attack();
-    private void OnDrawGizmos() => Gizmos.DrawWireSphere(AttackPlace.position, AttackRadius);
-
-    private void Attack()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
-            if (audioSource != null && attackSound != null)
-            {
-                audioSource.Play();
-            }
+            Attack();
+        }
+    }
 
-            Collider2D[] colliders = Physics2D.OverlapCircleAll(AttackPlace.position, AttackRadius, EnemyMask);
-            foreach (var collider in colliders)
+    private void Attack()
+    {
+        timer += Time.deltaTime;
+        Debug.Log(timer);
+        AttackImage.SetActive(true);
+        StartCoroutine(HideAttackImageAfterDelay(0.1f));
+
+        if (audioSource != null && attackSound != null)
+        {
+            audioSource.Play();
+        }
+
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(AttackPlace.position, AttackRadius, EnemyMask);
+        foreach (var collider in colliders)
+        {
+            if (collider.gameObject.TryGetComponent<Enemy>(out var enemy))
             {
-                if (collider.gameObject.TryGetComponent<Enemy>(out var enemy))
-                {
-                    enemy.TakeDamage();
-                }
-                else if (collider.gameObject.TryGetComponent<Boss>(out var boss))
-                {
-                    boss.TakeDamage();
-                }
-                
+                enemy.TakeDamage();
+            }
+            else if (collider.gameObject.TryGetComponent<Boss>(out var boss))
+            {
+                boss.TakeDamage();
             }
         }
+    }
+
+    private IEnumerator HideAttackImageAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        AttackImage.SetActive(false);
     }
 }

@@ -2015,7 +2015,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2742279846910573473, guid: e552e3ccac4c81f47bacdcda5dbb4000, type: 3}
   m_PrefabInstance: {fileID: 1273811248}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1273811252
+--- !u!114 &1273811255
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2024,7 +2024,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1273811251}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89f79185ec15c1048a1d6d2ebdae68a5, type: 3}
+  m_Script: {fileID: 11500000, guid: dea2a6d236ff3a04c8970a77beb97415, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ItemPrefab: {fileID: 7094566899898244902, guid: 46608e67e6f7f6b44873c7b4686a7ff3, type: 3}
@@ -3114,6 +3114,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 796807460, guid: 8003c733d7f3942439296ae6caaac93e, type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 1390576276}
+    - target: {fileID: 796807460, guid: 8003c733d7f3942439296ae6caaac93e, type: 3}
+      propertyPath: markObject
+      value: 
+      objectReference: {fileID: 1195561837}
     - target: {fileID: 6084137093855973654, guid: 8003c733d7f3942439296ae6caaac93e, type: 3}
       propertyPath: m_Name
       value: Player

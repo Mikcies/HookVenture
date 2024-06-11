@@ -59,14 +59,14 @@ public class HPControll : MonoBehaviour
     }
     internal void IsHit()
     {
-        if (CurrHP > 0 && !isHitCooldown)
+        if (CurrHP >= 1 && !isHitCooldown)
         {
             CurrHP--;
             isHitCooldown = true;
             hitCooldownTimer = maxHitCooldownTime;
             GetComponent<SpriteRenderer>().color = Color.red;
         }
-        else if (CurrHP == 0)
+        else if (CurrHP <= 0)
         {
             Collect.CoinAmount = 0;
             CurrHP = MaxHP;

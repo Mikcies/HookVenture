@@ -23,7 +23,7 @@ public class ShopDash : MonoBehaviour
 
     protected virtual void Update()
     {
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             CanShop();
         }
@@ -50,7 +50,7 @@ public class ShopDash : MonoBehaviour
 
     private void CanShop()
     {
-        if (StandingIn && !PlayerMovement.Dash && Collect.CoinAmount >= ItemValue)
+        if (StandingIn && !PlayerMovement.Dash && bonfire.BonfireCoin >= ItemValue)
         {
             bonfire.BonfireCoin -= ItemValue;
             if (spawnCount < 1)

@@ -25,7 +25,7 @@ public class ShopClaw : MonoBehaviour
 
     protected virtual void Update()
     {
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             CanShop();
         }
@@ -50,11 +50,12 @@ public class ShopClaw : MonoBehaviour
     }
 
 
-    protected virtual void CanShop()
+    void CanShop()
     {
-        if (StandingIn && !ShootGrapple.Claw && Collect.CoinAmount >= ItemValue)
+        if (StandingIn && !ShootGrapple.Claw && bonfire.BonfireCoin >= ItemValue)
         {
             bonfire.BonfireCoin -= ItemValue;
+
             if (spawnCount < 1)
             {
                 Instantiate(ItemPrefab, ItemLocation.position, Quaternion.identity);
@@ -62,4 +63,5 @@ public class ShopClaw : MonoBehaviour
             }
         }
     }
+
 }
