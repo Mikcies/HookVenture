@@ -8,7 +8,6 @@ public class ButtonRespond : MonoBehaviour
     [SerializeField]
     string scenename;
 
-    string sceneFromPlayerPrefs;
     public void LeaveGame()
     {
         Application.Quit();
@@ -20,14 +19,21 @@ public class ButtonRespond : MonoBehaviour
     public void Continue()
     {
         string sceneFromPrefs = PlayerPrefs.GetString("BonfireScene");
-        if(sceneFromPlayerPrefs == "")
+        string loadedscene = PlayerPrefs.GetString("LastScene");
+
+        if (string.IsNullOrEmpty(sceneFromPrefs))
         {
             PlayerPrefs.DeleteAll();
             SceneManager.LoadScene("Tutorial");
         }
+        else if (string.IsNullOrEmpty(loadedscene))
+        {
+            SceneManager.LoadScene(loadedscene);
+            PlayerPref.LoadData();
+        }
         else
         {
-            SceneManager.LoadScene(sceneFromPlayerPrefs);
+            SceneManager.LoadScene(sceneFromPrefs);
             PlayerPref.LoadData();
         }
     }
@@ -35,10 +41,5 @@ public class ButtonRespond : MonoBehaviour
     {
         PlayerPrefs.DeleteAll();
         SceneManager.LoadScene("Tutorial");
-    }
-    private void Update()
-    {
-        Debug.Log(sceneFromPlayerPrefs);
-
     }
 }

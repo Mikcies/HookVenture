@@ -20,7 +20,7 @@ public abstract class Enemy : MonoBehaviour
         CurrHp = MaxHp;
     }
 
-    void Update()
+    protected void Update()
     {
         Move();
     }

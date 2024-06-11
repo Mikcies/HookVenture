@@ -1,20 +1,38 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    GameObject target;
+    GameObject player;
+    Rigidbody2D rb;
     [SerializeField]
-    float BulletSpeed;
-    Rigidbody2D bulletRB;
-    
-    void Start()
+    float force;
+    float timer;
+    [SerializeField]
+    private LayerMask floorLayerMask;
+    private void Start()
     {
-        bulletRB = GetComponent<Rigidbody2D>();
-        target = GameObject.FindGameObjectWithTag("Player");
-        Vector2 movedir = (target.transform.position - transform.position).normalized * BulletSpeed;
-        bulletRB.velocity = new Vector2(movedir.x, movedir.y);
-        Destroy(this.gameObject, 1);
+        rb = GetComponent<Rigidbody2D>();
+        player = GameObject.FindGameObjectWithTag("Player");
+        Vector3 dir = player.transform.position - transform.position;
+        rb.velocity = new Vector2(dir.x, dir.y).normalized * force;
+        float rot = Mathf.Atan2(-dir.y, -dir.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0, 0, rot + 180);
+    }
+    private void Update()
+    {
+        timer += Time.deltaTime;
+        if(timer > 2)
+        {
+            Destroy(gameObject);
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == floorLayerMask)
+        {
+            Destroy(gameObject);
+        }
     }
 }

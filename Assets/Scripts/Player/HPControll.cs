@@ -73,7 +73,6 @@ public class HPControll : MonoBehaviour
         {
             CurrHP = 1;
             Collect.CoinAmount = 0;
-            SetPlayerToBonfire();
         }
     }
     private void GenerateHealthBar()

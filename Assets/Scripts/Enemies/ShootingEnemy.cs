@@ -1,46 +1,43 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ShootingEnemy : Enemy
 {
-    [SerializeField] private float ShootingRange;
-    [SerializeField] private GameObject bullet;
-    [SerializeField] private GameObject bulletStart;
-    [SerializeField] private float FireRate;
-    [SerializeField] private float NextFire;
 
-    void Start()
-    {
-        base.Start();
-    }
+    float timer;
+    [SerializeField]
+    GameObject bullet;
+    [SerializeField]
+    Transform bulletpos;
 
-    void Update()
+    
+    protected void Update()
     {
-        if(IsAlive())
+        base.Update();
+        float dis = Vector2.Distance(transform.position, player.transform.position);
+        timer += Time.deltaTime;
+        if (IsAlive())
         {
-            Shoot();
-        }
-    }
-    private void Shoot()
-    {
-        float DistanceFromPlayer = Vector2.Distance(player.position, transform.position);
+            if (dis < 10)
+            {
+                if (timer > 1.5f)
+                {
+                    timer = 0;
+                    Shoot();
+                }
 
-        if (DistanceFromPlayer <= ShootingRange && NextFire < Time.time)
-        {
-            Instantiate(bullet, bulletStart.transform.position, transform.rotation);
-            NextFire = Time.time + FireRate;
+            }
         }
+        
+        
     }
-    private void OnDrawGizmos()
+    void Shoot()
     {
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(transform.position, ShootingRange);
-        //Gizmos.DrawWireSphere(transform.transform.position, Site);
+        Instantiate(bullet, bulletpos.position, Quaternion.identity);
     }
 
     protected override void Move()
     {
-
     }
 }

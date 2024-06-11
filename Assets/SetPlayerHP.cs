@@ -10,6 +10,7 @@ public class SetPlayerHP : MonoBehaviour
     void Start()
     {
         HPControll.CurrHP = controll.MaxHP;
+        PlayerPrefs.SetInt("SavedHP", 5);
     }
 
     void Update()

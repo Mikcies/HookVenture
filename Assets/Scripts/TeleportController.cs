@@ -24,6 +24,7 @@ public class TeleportController : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             sceneOnSave = SceneManager.GetActiveScene().name;
+            PlayerPrefs.SetString("LastScene",sceneOnSave);
             PlayerPref.SaveData();
             if (DestinationScene == "CannalBossScene" && !CannalBoss.CannalBossAlive)
             {

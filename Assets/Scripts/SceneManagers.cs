@@ -26,5 +26,11 @@ public class SceneManagers : MonoBehaviour
             PlayerPrefs.Save();
             SceneManager.LoadScene("MainMenu");
         }
+
+    }
+    private void Awake()
+    {
+        string currScene = SceneManager.GetActiveScene().name;
+        PlayerPrefs.SetString("LastScene",currScene);
     }
 }

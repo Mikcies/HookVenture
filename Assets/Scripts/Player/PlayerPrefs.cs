@@ -18,7 +18,6 @@ public class PlayerPref : MonoBehaviour
         PlayerPrefs.SetInt("CaveBossAlive", CaveBoss.CaveBossAlive ? 1 : 0);
         PlayerPrefs.SetInt("MerchantSaved", merchant.Merchantsaved ? 1 : 0);
         PlayerPrefs.SetString("BonfireScene", bonfire.currentSceneName);
-
         PlayerPrefs.Save();
     }
     internal static void LoadData()
