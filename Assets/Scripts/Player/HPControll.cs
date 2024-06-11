@@ -40,14 +40,6 @@ public class HPControll : MonoBehaviour
         IFrames();
         IncreaseMaxHealth();
     }
-    private void OnEnable()
-    {
-        //sceneLoaded(bonfire.currentSceneName, LoadSceneMode.Single);
-    }
-    void sceneLoaded(string scene, LoadSceneMode mode)
-    {
-        //SetPlayerToBonfire();
-    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Spikes") || collision.gameObject.CompareTag("Boss") || collision.gameObject.CompareTag("water"))
